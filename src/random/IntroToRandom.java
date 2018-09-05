@@ -8,12 +8,10 @@ import java.util.Random;
 public class IntroToRandom {
 	public static void main(String[] args) {
 		
-		int r = 0;
-		
 		//3. Now make r random. 
 		//   Create an object of the Random class
 		//	 use .nextInt() to get a random number
-		
+		Random diRt = new Random();
 
 		//4. Limit the random number between 0 and 100
 
@@ -22,7 +20,7 @@ public class IntroToRandom {
 		//6. Challenge: Limit the random number between -222 and 88
 
 		//1. Print out the value of r
-		
+		System.out.println("The sun shall collide with the Earth upon the year of " + (diRt.nextInt(3000 - 2300) + 2301));
 		//2. Run the program.  What number appears in the console?
 		//   Run it again. Is the number the same?
 	}
