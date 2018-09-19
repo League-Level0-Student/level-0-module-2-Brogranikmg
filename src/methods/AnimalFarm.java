@@ -13,11 +13,23 @@ import javax.swing.JOptionPane;
 public class AnimalFarm {
 
 	AnimalFarm() {
+		String hell_animal = "";
 		/*
 		 * 1. Ask the user which animal they want, then play the sound of that animal.
 		 */
-		
-		/* 2. Make it so that the user can keep entering new animals. */
+		while (!hell_animal.equalsIgnoreCase("free me")) {
+			hell_animal = JOptionPane.showInputDialog("What hell animal would you like to suffer through today?");
+			/* 2. Make it so that the user can keep entering new animals. */
+			switch (hell_animal.toLowerCase()) {
+				case "cow": playMoo(); break;
+				case "duck": playQuack(); break;
+				case "dog": playWoof(); break;
+				case "cat": playMeow(); break;
+				case "llama": playLlama(); break;
+				case "free me": JOptionPane.showMessageDialog(null, "Goodbye... for now ;)"); break;
+				default: JOptionPane.showMessageDialog(null, "That's not an animal... ỉ̶̛̲̝͕̳̦̦̖̪̍͂̒̌̍͋͟t̳̰̙͔̠̰̰̳̮̂́̐̀̐͊́̈́ ì̷̡̡̹͉͓̘̫̀͐́̿͑́̀͌͡ͅs̵͕͓̟̰̼̾̀̇̉͝͝ o̴̰̥̬͈̘̺͎͓̾̉͂͘͞ư̷̤̠̲̜̺̘̣̾͗̆̑̾̊̋̚͞r̵̗͎̠̝̬̘̿̑͂͂̉̚͟͠͠ ģ̛͉̺͓̟͑̊̚͡o̵̧̙͖͕̤͔͚̘̞̅͊̽͛͗͡d̤̩̖̯̜̀̃̒̽̏̀͛̊̽̚͟"); break;
+			}
+		}
 	}
 
 	void playMoo() {
@@ -30,6 +42,14 @@ public class AnimalFarm {
 
 	void playWoof() {
 		playNoise(woofFile);
+	}
+	
+	void playMeow() {
+		playNoise(meowFile);
+	}
+	
+	void playLlama() {
+		playNoise(llamaFile);
 	}
 
 	String quackFile = "quack.wav";
